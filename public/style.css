@@ -1,5 +1,6 @@
 :root {
     --primary-color: #2A38F6;
+    --secondary-color: #010868;
 }
 
 * {
@@ -73,7 +74,7 @@ body {
 }
 
 .login-btn:hover {
-    background-color: #d63333;
+    background-color: var(--secondary-color);
 }
 
 .links {
@@ -90,5 +91,5 @@ body {
 }
 
 .links a:hover {
-    color: #d63333;
+    color: var(--secondary-color);
 }

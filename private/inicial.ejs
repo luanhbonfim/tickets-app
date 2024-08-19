@@ -16,7 +16,7 @@
         <div class="container">
             <header>
                 <i class="fa-solid fa-ticket"></i>
-                <h2>Home</h2>
+                <h2>TicketShow</h2>
             </header>
             <div class="icons-menu">
                 <div class="search-bar">
@@ -25,9 +25,10 @@
                 </div>
                 <div class="account">
                     <i class="fa-regular fa-circle-user"></i>
-                    <p>Faça <span>login</span> ou <span>cadastre-se</span></p>
+                    <p>Usuário:<span> <%= user.username %></span></p>
                 </div>
                 <i class="fa-solid fa-cart-shopping"></i>
+                <a href="/logout" id="button-sair">Sair</a>
             </div>
             <div class="menu-mobile">
                 <i class="fa-solid fa-bars"></i>
@@ -35,9 +36,9 @@
                     <i class="fa-solid fa-xmark"></i>
                     <ul>
                         <li>Home</li>
-                        <li>Entrar</li>
                         <li>Cadastrar</li>
                         <li>Ingressos</li>
+                        <li>section-banners</li>
                     </ul>
                 </div>
             </div>

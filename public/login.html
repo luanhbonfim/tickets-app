@@ -10,14 +10,14 @@
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form action="#" method="POST">
+        <form action="/login" method="post">
             <div class="input-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Usuário" required>
+                <input name="user" type="text" placeholder="Usuário" required>
             </div>
             <div class="input-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Senha" required>
+                <input name="password" type="password" placeholder="Senha" required>
             </div>
             <button type="submit" class="login-btn">Entrar</button>
         </form>

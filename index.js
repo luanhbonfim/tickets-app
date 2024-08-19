@@ -1,55 +1,40 @@
 import express from 'express';
+import session from 'express-session';
+import Autenticar from './api/autenticar.js';
+import { verificarAutenticacao, logout } from './api/autenticar.js';
 
 const host = 'localhost';
 const port = 3000;
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './private'); // Diretório para views privadas
+
+app.use(express.urlencoded({extended: true}));
+
+app.use(session({
+    secret: 'segredo',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 1000 * 60 * 15
+    }
+}));
+
 app.use(express.static('./public'));
 
-app.listen(port, host, () => {
-    console.log("Servidor on-line.")
-    console.log(`-> http://${host}:${port}`)
+app.get('/logout', logout);
+
+app.get('/login', (req, res) => {
+    res.render('login');   
 });
 
+app.post('/login', Autenticar);
 
+app.use(verificarAutenticacao, express.static('./private'));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import http from 'http';
-// import fs from 'fs';
-
-// const hostname = 'localhost';
-// const porta = 3005;
-
-// const servidor = http.createServer(
-//     (req, resp) => {
-//         if (req.method === "GET") {
-//             if (req.url === '/login.html') {
-//                 fs.createReadStream("./public" + req.url).pipe(resp);
-//             } else {
-//                 resp.statusCode = 404;
-//                 resp.setHeader('Content-type', 'text/html;charset=utf-8');
-//                 resp.end(`<p>A página ${req.url}, não foi encontrada</p>`)
-//             }
-//         } else {
-//             resp.statusCode = 405; 
-//             resp.setHeader('Content-Type', 'text/html;charset=utf-8');
-//             resp.end('<p>Método não permitido</p>');
-//         }
-// });
-
-// servidor.listen(porta, hostname, () => {
-//     console.log(`Servidor online! ${hostname}:${porta}`);
-// });
+app.listen(port, host, () => {
+    console.log("Servidor on-line.");
+    console.log(`-> http://${host}:${port}`);
+});

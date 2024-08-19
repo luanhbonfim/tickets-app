@@ -20,6 +20,10 @@ html {
     padding: 0 15px;
 }
 
+.menu p, .menu h1, .menu i {
+    cursor: pointer;
+}
+
 .menu {
     color: white;
     background-color: #2A38F6;
@@ -55,7 +59,7 @@ html {
 }
 
 
-.menu .menu-mobile .active {
+.menu .menu-mobile {
     display: none;
 }
 
@@ -103,6 +107,12 @@ html {
 .menu .icons-menu .account span {
     font-weight: bold;
     cursor: pointer;
+}
+
+.menu .icons-menu #button-sair {
+    color: white;
+    text-decoration: none;
+    font-size: 1.7rem;
 }
 
 .section-banners img {

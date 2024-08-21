@@ -31,9 +31,9 @@
                 <a href="/logout" id="button-sair">Sair</a>
             </div>
             <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
-                <div class="active">
-                    <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-bars" onclick="clickButton()"></i>
+                <div class="nav-mobile">
+                    <i class="fa-solid fa-xmark" onclick="clickButton()"></i>
                     <ul>
                         <li>Home</li>
                         <li>Cadastrar</li>
@@ -54,13 +54,15 @@
             <h1>Próximos eventos</h1>
 
             <div class="cards">
-                <div class="card">
-                    <img src="https://cdn.quero2ingressos.com.br/fit-in/740x425/filters:format(webp):quality(95)/img/Content/images/events/28706.jpeg?h=a07527ca1e7a8ea70d7ed8a0ad701af8" alt="">
-                    <h3>Teste</h3>
-                    <p>Data: 06 de agosto de 2024</p>
-                    <p>Local: Arena Marília, Marília - SP</p>
-                    <p>Horário: 21:00</p>
-                </div>
+                <a href="desc.html">
+                    <div class="card">
+                        <img src="https://cdn.quero2ingressos.com.br/fit-in/740x425/filters:format(webp):quality(95)/img/Content/images/events/28706.jpeg?h=a07527ca1e7a8ea70d7ed8a0ad701af8" alt="">
+                        <h3>Teste</h3>
+                        <p>Data: 06 de agosto de 2024</p>
+                        <p>Local: Arena Marília, Marília - SP</p>
+                        <p>Horário: 21:00</p>
+                    </div>
+                </a>
 
                 <div class="card">
                     <img src="https://cdn.quero2ingressos.com.br/fit-in/740x425/filters:format(webp):quality(95)/img/Content/images/events/28706.jpeg?h=a07527ca1e7a8ea70d7ed8a0ad701af8" alt="">
@@ -100,5 +102,7 @@
             </div>
         </section>
     </main>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

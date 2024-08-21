@@ -142,6 +142,8 @@ html {
 }
 
 .section-cards .cards .card {
+    cursor: pointer;
+    
     padding: 2rem;
 
     border: 1px solid rgba(0, 0, 0, 0.219);
@@ -179,8 +181,12 @@ html {
         z-index: 2;
     }
 
-    .menu .menu-mobile .active {
-        display: flex;
+    .menu .menu-mobile .nav-mobile {
+        display: none;
+    }
+
+    .active {
+        display: flex !important;
         align-items: center;
         justify-content: center;
 
@@ -193,7 +199,21 @@ html {
         height: 100%;
         background-color: var(--primary-color);
         z-index: 1;
+        
+        transform: translateY(-100%);
+        animation: slideIn 0.5s ease forwards;
     }
+    
+    
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
 
     .menu .menu-mobile .active i {
         position: absolute;

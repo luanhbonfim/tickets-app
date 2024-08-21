@@ -2,7 +2,7 @@ export default function Autenticar(req, res) {
     const userInput = req.body.user;
     const passwordInput = req.body.password;
 
-    if (userInput == "Luan" && passwordInput == "admin123") {
+    if (userInput == "Renato" && passwordInput == "admin123") {
         req.session.autenticado = true;
         req.session.user = { username: userInput }
         res.render('inicial', { user: req.session.user });

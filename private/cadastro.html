@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Evento - TicketShow</title>
+
+    <!-- Icones -->
+    <script src="https://kit.fontawesome.com/5a46620e39.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/styles/cadastro.css">
+</head>
+<body>
+    <nav class="menu">
+        <div class="container">
+            <header>
+                <i class="fa-solid fa-ticket"></i>
+                <h2>TicketShow</h2>
+            </header>
+            <div class="icons-menu">
+                <div class="search-bar">
+                    <input type="text" name="search" placeholder="Pesquise algum evento">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="/logout" id="button-sair">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section-form container">
+            <h1>Cadastrar Evento</h1>
+
+            <!-- Adicionando um elemento para exibir mensagens -->
+            <div id="mensagem" style="margin-bottom: 20px;"></div>
+
+            <form action="/evento/cadastrar" method="POST" class="form-cadastro-evento">
+                <input type="hidden" id="idEvento" name="idEvento">
+                <div class="input-group">
+                    <label for="nome">Nome do Evento</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite o nome do evento" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" placeholder="Digite o estado" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="nomePromoter">Promoter</label>
+                    <input type="text" id="nomePromoter" name="nomePromoter" placeholder="Digite o nome do promoter" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="data">Data de Início</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="dataFim">Data de Término</label>
+                    <input type="date" id="dataFim" name="dataFim">
+                </div>
+
+                <div class="input-group">
+                    <label for="horario">Horário</label>
+                    <input type="time" id="horario" name="horario" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="capacidade">Capacidade</label>
+                    <input type="number" id="capacidade" name="capacidade" placeholder="Digite a capacidade do evento" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva o evento" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-cadastrar">Cadastrar Evento</button>
+            </form>
+            
+        </section>
+
+        <div id="containerTabela"></div>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./js/evento.js"></script>
+</body>
+</html>

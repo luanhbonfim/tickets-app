@@ -1,0 +1,288 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary-color: #2A38F6;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para o menu de navegação */
+.menu {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 0;
+}
+
+.menu .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu header {
+    display: flex;
+    align-items: center;
+}
+
+.menu header i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.menu header h2 {
+    font-size: 24px;
+}
+
+.icons-menu {
+    display: flex;
+    align-items: center;
+}
+
+.icons-menu .search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icons-menu .search-bar input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.icons-menu .search-bar i {
+    margin-left: 10px;
+    color: white;
+}
+
+.icons-menu .account {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icons-menu .account i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.icons-menu .account p {
+    margin-right: 10px;
+}
+
+.icons-menu .fa-cart-shopping {
+    font-size: 24px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#button-sair {
+    background-color: #444;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#button-sair:hover {
+    background-color: #555;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.menu-mobile .nav-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    width: 250px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.menu-mobile .nav-mobile ul {
+    list-style: none;
+}
+
+.menu-mobile .nav-mobile ul li {
+    margin: 20px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.menu-mobile .nav-mobile i {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-mobile i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Estilos para o formulário de evento */
+.section-form {
+    background-color: var(--primary-color);
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.section-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.form-cadastro-evento {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+.input-group input[type="file"] {
+    border: none;
+}
+
+.btn-cadastrar {
+    padding: 15px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #1f2dbd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .icons-menu {
+        display: none;
+    }
+
+    .menu-mobile.active .nav-mobile {
+        transform: translateX(0);
+    }
+
+    .form-cadastro-evento {
+        padding: 20px;
+    }
+}
+
+/* Estilos para a tabela de eventos */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Cor de fundo para linhas pares */
+}
+
+.table tbody tr:hover {
+    background-color: #e2e2e2; /* Cor de fundo ao passar o mouse */
+}
+
+.table td button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.table td button:hover {
+    background-color: #1f2dbd; /* Cor de fundo ao passar o mouse nos botões */
+}
+
+.table td button:active {
+    background-color: #1a1f89; /* Cor de fundo quando o botão é pressionado */
+}
+
+/* Estilos para mensagens */
+#mensagem {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
